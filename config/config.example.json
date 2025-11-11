@@ -1,0 +1,13 @@
+{
+  "interval_seconds": 30,
+  "ip_addresses": [
+    {
+      "ip": "192.168.1.100",
+      "name": "Device 1"
+    },
+    {
+      "ip": "192.168.1.101",
+      "name": "Device 2"
+    }
+  ]
+}

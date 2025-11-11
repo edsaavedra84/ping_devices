@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  ping-thermostats:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: ping-thermostats:latest
+    container_name: ping-thermostats
+    restart: unless-stopped
+    network_mode: host  # Required to ping devices on local network
+    volumes:
+      - ../config:/app/config:ro  # Mount config directory as read-only
+      - ../logs:/app/logs         # Mount logs directory for persistent logs
+    environment:
+      - TZ=America/New_York  # Set timezone (adjust as needed)
